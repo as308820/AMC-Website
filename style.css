@@ -1,0 +1,245 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+
+
+}
+
+
+
+
+
+.contenedor{
+    max-width: 800px; /* Set a fixed maximum width for the content area */
+    margin: 50px auto; /* Center the container horizontally and add vertical spacing */
+    padding: 20px; /* Add space inside the container */
+    background-color: #fff; /* White background for content */
+    border: 2px solid #333; /* Add a border around the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for styling */
+    border-radius: 10px;
+
+}
+h1 {
+    color:black;
+    font-family: Oswald, sans-serif;
+    font-weight: 300; /* Make the font thinner */
+
+
+
+}
+p{
+    font-family: Oswald, sans-serif;
+    font-weight: 10;
+
+}
+
+.container {
+    display: flex; /* Flexbox layout for the buttons */
+    justify-content: space-evenly; /* Evenly space the buttons */
+    width: 100%; /* Control the width of the container */
+  }
+
+  button {
+    font-size: 16px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px; /* Optional: rounded corners */
+  }
+
+  /* Optional: Individual styling for buttons */
+  button.left {
+    background-color: white;
+  }
+  button.middle {
+    background-color: white;
+  }
+  button.right {
+    background-color: white;
+  }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  
+
+#slider {
+    overflow: hidden;
+
+}
+#slider {
+    width: 90px;
+    height: 370px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%
+   
+}
+#slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slider infinite;
+
+}
+#slider figure img{
+    float: left;
+    width: 20%;
+}
+@keyframes slider {
+    0% {
+        left: 0;
+    }
+    20%{
+        left: 0;
+    }
+    25%{
+        left: -100%;
+    }
+    45%{
+        left: -100%;
+    }
+    50%{
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75%{
+        left:-300%
+    }
+    95%{
+        left:-300%;
+    }
+    100% {
+        left: -400%;
+    }
+}
+
+.cont {
+    border: 1px solid rgb(164, 158, 158);
+    height: .1px;
+    position: relative;
+  }
+
+  .center-text{
+    font-family: Oswald, sans-serif;
+    font-weight: 10;
+    font-size: 12px;
+    text-align: center;
+    
+    
+  }
+
+#slidert {
+    overflow: hidden;
+
+}
+#slidert {
+    width: 900px;
+    height: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%
+   
+}
+#slidert figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+
+}
+#slidert figure img{
+    float: left;
+    width: 20%;
+}
+
+.center-text-two{
+    font-family: Oswald, sans-serif;
+    font-weight: 10;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    
+    
+  }
+
+
+  textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formfield {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .center-line {
+    text-align: center;
+  }
+  
+  .contact-container{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+    
+
+  }
+  .contact-left{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
+ 
+  .contact-inputs{
+    width: 400px;
+    height: 50px;
+   
+  }
+  .contact-left textarea{
+    height: 140px;
+    padding-top: 15px;
+  }
+  .contact-inputs:focus{
+    border: 2px solid blueviolet;
+  }
+.contact-inputs::placeholder{
+    color: lightgray;
+}
+
+
+  
+  #button2 {
+    position: static; /* Ensure the button follows the document flow */
+    margin-top: 20px;
+text-align: center;
+    width: 92%;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: blueviolet;
+    border-radius: 50px;
+  }
