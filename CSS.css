@@ -86,10 +86,13 @@ h1 {
   
   /* Images */
   .column img {
-    width: 100%;       /* Fill the width of its column */
+    max-width: 100%;       /* Fill the width of its column */
     height: auto\9;      /* Keep the aspect ratio */
     border: 1px solid #ccc;
+    display: block; /* Remove any extra space below the image if inline */
+
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+   
   }
 
 
@@ -241,10 +244,13 @@ h1 {
   
   /* Images */
   .column-two img {
-    width: 100%;       /* Fill the width of its column */
-    height: auto\9;  
-        /* Keep the aspect ratio */
+     
+    max-width: 100%;       /* Fill the width of its column */
+    height: auto\9;      /* Keep the aspect ratio */
     border: 1px solid #ccc;
+    display: block; /* Remove any extra space below the image if inline */
+
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+   
   }
 
