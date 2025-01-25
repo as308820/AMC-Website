@@ -14,6 +14,7 @@ body{
 
 }
 
+
 .banner-image {
   display: block;
   margin: 0 auto;
@@ -21,7 +22,6 @@ body{
   max-width: 1200px; /* or any width you prefer for big screens */
   height: auto;
 }
-
 
 
 .contenedor{
@@ -32,6 +32,8 @@ body{
     border: 2px solid #333; /* Add a border around the container */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for styling */
     border-radius: 10px;
+    text-align: center; /* key to horizontally centering inline/inline-blocks */
+
 
 }
 h1 {
@@ -81,31 +83,35 @@ p{
 
   
 
-#slider {
-    overflow: hidden;
-
-}
-#slider {
-    width: 90px;
-    height: 370px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 65%
-   
-}
-#slider figure {
+  #slider {
+    position: relative;   /* position relative for the animation */
+    width: 65%;           /* 65% of its parent’s width. Adjust if desired. */
+    max-width: 800px;     /* optional max width so it won’t stretch too large */
+    margin: 0 auto;       /* center horizontally */
+    overflow: hidden;     /* hide the overflowing slides */
+    /* Remove any fixed height so the slider can size to images: */
+    /* height: 370px; <-- Remove this line */
+  }
+  
+  /* Figure that slides left */
+  #slider figure {
     position: relative;
-    width: 500%;
     margin: 0;
+    width: 500%;          /* 5 images => 500% if each is 20% width */
     left: 0;
-    animation: 20s slider infinite;
-
-}
-#slider figure img{
-    float: left;
+    animation: slider 20s infinite;
+    display: flex;        /* Use flex so images naturally line up horizontally */
+  }
+  
+  /* Each image takes up 20% of the figure’s width */
+  #slider figure img {
     width: 20%;
-}
+    height: auto;         /* keep the aspect ratio */
+    float: left;          /* can also be omitted if you're using display: flex */
+    object-fit: cover;    /* optional: fill the space if images differ in size */
+    display: block;
+  }
+  
 @keyframes slider {
     0% {
         left: 0;
@@ -188,64 +194,78 @@ p{
 
 
   textarea {
-    display: block;
+    display: inline-block;  /* so the button respects text-align: center */
     margin-left: auto;
     margin-right: auto;
 }
 
-.formfield {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+form {
+  display: flex;
+  flex-direction: column; /* stack each element vertically */
+  align-items: center;    /* center them horizontally if they have a set max-width */
+  width: 100%;            /* let the form stretch across the container */
+}
   .center-line {
     text-align: center;
   }
   
-  .contact-container{
-    height: 50vh;
+  .contact-container {
     display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: space-evenly;
-    
-
+    justify-content: space-evenly; /* space horizontally between left & right */
+    align-items: flex-start;       /* top-align them */
+    gap: 20px;                     /* extra horizontal gap if needed */
+    /* height: 50vh; <-- You may not need a fixed height. Remove if undesired. */
+    text-align: center;            /* This will center inline text if needed */
   }
+
   .contact-left{
-    display: flex;
+    display: flex;  /* so the button respects text-align: center */
+
     flex-direction: column;
     align-items: start;
     gap: 10px;
   }
  
-  .contact-inputs{
-    width: 400px;
-    height: 50px;
-   
+  .contact-inputs {
+    display: block;         /* makes them full-width in their container */
+    width: 100%;            /* or pick a max-width if you want to limit how wide they get */
+    max-width: 400px;       /* keep them from stretching too wide on big screens */
+    box-sizing: border-box; /* ensures padding is included in the total width */
+    margin-bottom: 1rem;    /* spacing below each input/textarea */
+    padding: 10px;          /* some inner padding for a nicer feel */
+    border: 1px solid #ccc; /* a light border to see the box */
+    border-radius: 5px;
   }
-  .contact-left textarea{
-    height: 140px;
-    padding-top: 15px;
+  
+  .contact-left textarea.contact-inputs {
+    min-height: 100px; /* ensure some height for the message box */
+    resize: vertical;  /* allow user to stretch if needed */
   }
-  .contact-inputs:focus{
+  
+  /* Focus style is fine as you have it */
+  .contact-inputs:focus {
     border: 2px solid blueviolet;
   }
-.contact-inputs::placeholder{
+  
+  /* Placeholder style is also fine */
+  .contact-inputs::placeholder {
     color: lightgray;
-}
+  }
+  
 
 
   
-  #button2 {
-    position: static; /* Ensure the button follows the document flow */
-    margin-top: 20px;
-text-align: center;
-    width: 92%;
-    height: 50px;
-    border: none;
-    outline: none;
-    padding-left: 25px;
-    font-weight: 500;
-    color: blueviolet;
-    border-radius: 50px;
-  }
+#button2 {
+  display: block;
+  margin: 0 auto;           /* centers horizontally if it has a fixed or max width */
+  margin-top: 1rem;         /* space above the button */
+  width: auto;              /* or define a width or use % to make it bigger */
+  height: 50px;
+  padding: 0 25px;          /* horizontal space instead of using 'width' */
+  font-weight: 500;
+  color: blueviolet;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
