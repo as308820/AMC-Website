@@ -24,6 +24,8 @@ h1 {
 
 }
 
+
+
 .container {
     display: flex; /* Flexbox layout for the buttons */
     justify-content: space-evenly; /* Evenly space the buttons */
@@ -36,6 +38,7 @@ h1 {
     cursor: pointer;
     border-radius: 5px; /* Optional: rounded corners */
   }
+
 
   /* Optional: Individual styling for buttons */
   button.left {
@@ -56,6 +59,10 @@ h1 {
     width: 50%;
   }
 
+
+
+
+
   .container-images {
     border: 1px solid black;
     display: flex;            /* Place interior and exterior side by side */
@@ -63,6 +70,14 @@ h1 {
     gap: 80px;                /* Space between columns */
     margin: 40px 0;           /* Space around this container on the page */
     padding: 20px;            /* Space inside the border */
+  }
+
+  @media (max-width: 600px) {
+    .container-images {
+      flex-direction: column;  /* Stack columns vertically on small screens */
+      gap: 20px;               /* Smaller gap, now vertical spacing */
+      align-items: center;     /* Ensure columns are centered within container */
+    }
   }
   
   /* Common styles for each column inside the container */
@@ -97,60 +112,7 @@ h1 {
 
 
 
-#slider {
-    overflow: hidden;
 
-}
-#slider {
-    width: 90px;
-    height: 400px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 65%
-   
-}
-#slider figure {
-    position: relative;
-    width: 500%;
-    margin: 0;
-    left: 0;
-    animation: 20s slider infinite;
-
-}
-#slider figure img{
-    float: left;
-    width: 20%;
-}
-@keyframes slider {
-    0% {
-        left: 0;
-    }
-    20%{
-        left: 0;
-    }
-    25%{
-        left: -100%;
-    }
-    45%{
-        left: -100%;
-    }
-    50%{
-        left: -200%;
-    }
-    70% {
-        left: -200%;
-    }
-    75%{
-        left:-300%
-    }
-    95%{
-        left:-300%;
-    }
-    100% {
-        left: -400%;
-    }
-}
 
 .cont {
     border: 1px solid rgb(164, 158, 158);
@@ -166,31 +128,6 @@ h1 {
     
     
   }
-
-#slidert {
-    overflow: hidden;
-
-}
-#slidert {
-    width: 900px;
-    height: 400px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%
-   
-}
-#slidert figure {
-    position: relative;
-    width: 500%;
-    margin: 0;
-    left: 0;
-
-}
-#slidert figure img{
-    float: left;
-    width: 20%;
-}
 
 .center-text-two{
     font-family: Oswald, sans-serif;
@@ -223,6 +160,15 @@ h1 {
     padding: 20px;            /* Space inside the border */
   }
   
+  @media (max-width: 600px) {
+    .container-imagestwo {
+      flex-direction: column;  /* Stack columns vertically on small screens */
+      gap: 20px;               /* Smaller gap, now vertical spacing */
+      align-items: center;     /* Ensure columns are centered within container */
+    }
+  }
+
+  
   /* Common styles for each column inside the container */
   .column-two {
     display: flex;
@@ -244,13 +190,11 @@ h1 {
   
   /* Images */
   .column-two img {
-     
-    max-width: 100%;       /* Fill the width of its column */
-    height: auto\9;      /* Keep the aspect ratio */
+    width: 100%;       /* Fill the width of its column */
+    height: auto\9;  
+        /* Keep the aspect ratio */
     border: 1px solid #ccc;
-    display: block; /* Remove any extra space below the image if inline */
-
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-   
   }
 
+  
